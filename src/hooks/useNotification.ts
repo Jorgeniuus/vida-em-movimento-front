@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import { api } from '../services/api';
 
 const intervalMap: Record<string, number> = {
-  '30min': 1000000, // 10 segundos teste
-//   '30min': 10000, // 10 segundos teste
+//   '30min': 1000000, // 10 segundos teste
+  '30min': 10000, // 10 segundos teste
 //   '30min': 1800000,
   '1h': 3600000,
   '2h': 7200000,
@@ -34,9 +35,23 @@ export const useNotification = (
       }
 
       try {
+        const response = await api.get(
+          `/users/${email}`
+        );
+
+        const user = response.data;
+
+        if (!user.isSubscribed) {
+          console.log(
+            'Usuário cancelou os lembretes'
+          );
+
+          return;
+        }
+
         await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
           {
             user_name: name,
             user_email: email,
@@ -47,7 +62,10 @@ export const useNotification = (
 
         console.log('Email enviado!');
       } catch (error) {
-        console.log('Erro ao enviar email', error);
+        console.log(
+          'Erro ao enviar email',
+          error
+        );
       }
     }, intervalMap[interval]);
 

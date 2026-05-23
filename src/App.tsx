@@ -62,6 +62,7 @@ function App() {
         notificationInterval,
         notificationType,
         selectedExercises,
+        isSubscribed: true,
       });
 
       alert('Usuário salvo com sucesso!');
