@@ -19,8 +19,6 @@ function App() {
 
   const [notificationInterval, setNotificationInterval] = useState('');
 
-  const [notificationType, setNotificationType] = useState<string[]>([]);
-
   const [selectedExercises, setSelectedExercises] = useState<string[]>([]);
 
   useNotification(
@@ -29,18 +27,6 @@ function App() {
     name,
     email
   );
-
-  const handleNotificationType = (value: string) => {
-    if (notificationType.includes(value)) {
-      setNotificationType(
-        notificationType.filter((item) => item !== value)
-      );
-
-      return;
-    }
-
-    setNotificationType([...notificationType, value]);
-  };
 
   const handleExercise = (exercise: string) => {
     if (selectedExercises.includes(exercise)) {
@@ -60,7 +46,6 @@ function App() {
         name,
         email,
         notificationInterval,
-        notificationType,
         selectedExercises,
         isSubscribed: true,
       });
@@ -151,30 +136,6 @@ return (
                 Mais de 2 horas
               </label>
             </div>
-          </div>
-        </div>
-
-         <div className="bg-white rounded-3xl p-6 shadow-sm mt-6">
-          <h2 className="text-2xl font-semibold mb-6">
-            Tipo de notificação
-          </h2>
-
-          <div className="flex gap-6">
-            <label className="flex gap-3">
-              <input
-                type="checkbox"
-                onChange={() => handleNotificationType('email')}
-              />
-              Email
-            </label>
-
-            <label className="flex gap-3">
-              <input
-                type="checkbox"
-                onChange={() => handleNotificationType('sms')}
-              />
-              SMS
-            </label>
           </div>
         </div>
 

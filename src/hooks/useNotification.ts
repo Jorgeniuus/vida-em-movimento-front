@@ -23,14 +23,12 @@ export const useNotification = (
     Notification.requestPermission();
 
     const timer = setInterval(async () => {
-      const randomExercise =
-        selectedExercises[
-          Math.floor(Math.random() * selectedExercises.length)
-        ] || 'Alongamento';
+
+    const exercisesList = selectedExercises.join(', ') || 'Alongamento';
 
       if (Notification.permission === 'granted') {
         new Notification('Hora de se movimentar!', {
-          body: `Exercício recomendado: ${randomExercise}`,
+          body: `Exercício recomendado: ${exercisesList}`,
         });
       }
 
@@ -55,7 +53,7 @@ export const useNotification = (
           {
             user_name: name,
             user_email: email,
-            exercise: randomExercise,
+            exercise: exercisesList,
           },
           import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         );
