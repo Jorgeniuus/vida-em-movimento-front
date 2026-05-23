@@ -23,7 +23,12 @@ function App() {
 
   const [selectedExercises, setSelectedExercises] = useState<string[]>([]);
 
-  useNotification(notificationInterval, selectedExercises);
+  useNotification(
+    notificationInterval,
+    selectedExercises,
+    name,
+    email
+  );
 
   const handleNotificationType = (value: string) => {
     if (notificationType.includes(value)) {
