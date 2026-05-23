@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import { api } from './services/api';
 import { useNotification } from './hooks/useNotification';
+import alongamentoImg from './exercises/alongamento.png';
+import caminhadaImg from './exercises/caminhada.png';
+import bicicletaImg from './exercises/bicicleta.png';
+import flexaoImg from './exercises/flexao.png';
+import abdominalImg from './exercises/abdominal.png';
+import barraImg from './exercises/barra.png';
+import corridaImg from './exercises/corrida.png';
+import yogaImg from './exercises/yoga.png';
 
 const exercises = [
   'Alongamento',
@@ -12,6 +20,17 @@ const exercises = [
   'Corrida',
   'Yoga',
 ];
+
+const exerciseImages: Record<string, string> = {
+  Alongamento: alongamentoImg,
+  Caminhada: caminhadaImg,
+  Bicicleta: bicicletaImg,
+  Flexão: flexaoImg,
+  Abdominal: abdominalImg,
+  Barra: barraImg,
+  Corrida: corridaImg,
+  Yoga: yogaImg,
+};
 
 function App() {
   const [name, setName] = useState('');
@@ -124,7 +143,7 @@ return (
                   name="interval"
                   onChange={() => setNotificationInterval('2h')}
                 />
-                2 horas
+                3 horas
               </label>
 
               <label className="flex gap-3">
@@ -133,7 +152,7 @@ return (
                   name="interval"
                   onChange={() => setNotificationInterval('more')}
                 />
-                Mais de 2 horas
+                5 horas
               </label>
             </div>
           </div>
@@ -158,9 +177,7 @@ return (
                       : 'border-transparent bg-white'
                   }`}
                 >
-                  <div className="h-40 bg-slate-200 flex items-center justify-center">
-                    Imagem
-                  </div>
+                  <div className="h-40 bg-slate-200"> <img src={exerciseImages[exercise]} alt={exercise} className="w-full h-full object-cover" /> </div>
 
                   <div className="p-4">
                     <h3 className="font-semibold text-lg">

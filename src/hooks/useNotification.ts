@@ -3,12 +3,10 @@ import emailjs from '@emailjs/browser';
 import { api } from '../services/api';
 
 const intervalMap: Record<string, number> = {
-//   '30min': 1000000, // 10 segundos teste
-  '30min': 10000, // 10 segundos teste
-//   '30min': 1800000,
+  '30min': 1800000,
   '1h': 3600000,
-  '2h': 7200000,
-  more: 10800000,
+  '3h': 10800000,
+  '5h': 18000000,
 };
 
 export const useNotification = (
