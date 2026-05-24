@@ -18,11 +18,11 @@ function App() {
   const [email, setEmail] = useState('');
 
   const [notificationInterval, setNotificationInterval] = useState('');
-
+  const [notificationsEnabled, setNotificationsEnabled] = useState(false);
   const [selectedExercises, setSelectedExercises] = useState<string[]>([]);
 
   useNotification(
-    notificationInterval,
+    notificationsEnabled ? notificationInterval : '',
     selectedExercises,
     name,
     email
@@ -50,6 +50,8 @@ function App() {
         isSubscribed: true,
       });
 
+      setNotificationsEnabled(true);
+      
       alert('Usuário salvo com sucesso!');
     } catch (error) {
       console.log(error);
@@ -104,6 +106,17 @@ return (
                 <input
                   type="radio"
                   name="interval"
+                  onChange={() =>
+                    setNotificationInterval('10sec')
+                  }
+                />
+                10 segundos (teste)
+              </label>
+
+              <label className="flex gap-3">
+                <input
+                  type="radio"
+                  name="interval"
                   onChange={() => setNotificationInterval('30min')}
                 />
                 30 minutos
@@ -122,7 +135,7 @@ return (
                 <input
                   type="radio"
                   name="interval"
-                  onChange={() => setNotificationInterval('2h')}
+                  onChange={() => setNotificationInterval('3h')}
                 />
                 3 horas
               </label>
@@ -131,7 +144,7 @@ return (
                 <input
                   type="radio"
                   name="interval"
-                  onChange={() => setNotificationInterval('more')}
+                  onChange={() => setNotificationInterval('5h')}
                 />
                 5 horas
               </label>
@@ -177,6 +190,7 @@ return (
 
         <div className="flex justify-end mt-8">
           <button
+            type="button"
             onClick={handleSubmit}
             className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-2xl font-semibold"
           >
