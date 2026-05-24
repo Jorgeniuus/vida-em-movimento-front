@@ -10,7 +10,7 @@ const intervalMap: Record<string, number> = {
   '5h': 18000000,
 };
 
-const exerciseImageUrls: Record<string, string> = {
+export const exerciseImageUrls: Record<string, string> = {
   Alongamento: `${import.meta.env.VITE_APP_URL}/exercises/alongamento.png`,
   Caminhada: `${import.meta.env.VITE_APP_URL}/exercises/caminhada.png`,
   Bicicleta: `${import.meta.env.VITE_APP_URL}/exercises/bicicleta.png`,

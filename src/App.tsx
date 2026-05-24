@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { api } from './services/api';
-import { useNotification } from './hooks/useNotification';
+import { exerciseImageUrls, useNotification } from './hooks/useNotification';
 
 const exercises = [
   'Alongamento',
@@ -12,17 +12,6 @@ const exercises = [
   'Corrida',
   'Yoga',
 ];
-
-const exerciseImages: Record<string, string> = {
-  Alongamento: '/exercises/alongamento.png',
-  Caminhada: '/exercises/caminhada.png',
-  Bicicleta: '/exercises/bicicleta.png',
-  Flexão: '/exercises/flexao.png',
-  Abdominal: '/exercises/abdominal.png',
-  Barra: '/exercises/barra.png',
-  Corrida: '/exercises/corrida.png',
-  Yoga: '/exercises/yoga.png',
-};
 
 function App() {
   const [name, setName] = useState('');
@@ -169,7 +158,7 @@ return (
                       : 'border-transparent bg-white'
                   }`}
                 >
-                  <div className="h-40 bg-slate-200"> <img src={exerciseImages[exercise]} alt={exercise} className="w-full h-full object-cover" /> </div>
+                  <div className="h-40 bg-slate-200"> <img src={exerciseImageUrls[exercise]} alt={exercise} className="w-full h-full object-cover" /> </div>
 
                   <div className="p-4">
                     <h3 className="font-semibold text-lg">
