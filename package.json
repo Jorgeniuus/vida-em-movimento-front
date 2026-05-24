@@ -2,7 +2,7 @@
   "name": "vite-project",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://SEU_USUARIO.github.io/NOME_REPO",
+  "homepage": "https://jorgeniuus.github.io/vida-em-movimento-front",
   "type": "module",
   "scripts": {
     "dev": "vite",
