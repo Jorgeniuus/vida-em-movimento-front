@@ -11,14 +11,23 @@ const intervalMap: Record<string, number> = {
 };
 
 const exerciseImageUrls: Record<string, string> = {
-  Alongamento: `${import.meta.env.VITE_APP_URL}/exercises/alongamento.png`,
-  Caminhada: `${import.meta.env.VITE_APP_URL}/exercises/caminhada.png`,
-  Bicicleta: `${import.meta.env.VITE_APP_URL}/exercises/bicicleta.png`,
-  Flexão: `${import.meta.env.VITE_APP_URL}/exercises/flexao.png`,
-  Abdominal: `${import.meta.env.VITE_APP_URL}/exercises/abdominal.png`,
-  Barra: `${import.meta.env.VITE_APP_URL}/exercises/barra.png`,
-  Corrida: `${import.meta.env.VITE_APP_URL}/exercises/corrida.png`,
-  Yoga: `${import.meta.env.VITE_APP_URL}/exercises/yoga.png`,
+  // Alongamento: `${import.meta.env.VITE_APP_URL}/exercises/alongamento.png`,
+  // Caminhada: `${import.meta.env.VITE_APP_URL}/exercises/caminhada.png`,
+  // Bicicleta: `${import.meta.env.VITE_APP_URL}/exercises/bicicleta.png`,
+  // Flexão: `${import.meta.env.VITE_APP_URL}/exercises/flexao.png`,
+  // Abdominal: `${import.meta.env.VITE_APP_URL}/exercises/abdominal.png`,
+  // Barra: `${import.meta.env.VITE_APP_URL}/exercises/barra.png`,
+  // Corrida: `${import.meta.env.VITE_APP_URL}/exercises/corrida.png`,
+  // Yoga: `${import.meta.env.VITE_APP_URL}/exercises/yoga.png`,
+
+    Alongamento: '../../public/exercises/alongamento.png',
+  Caminhada: '../../public/exercises/caminhada.png',
+  Bicicleta: '../../public/exercises/bicicleta.png',
+  Flexão: '../../public/exercises/flexao.png',
+  Abdominal: '../../public/exercises/abdominal.png',
+  Barra: '../../public/exercises/barra.png',
+  Corrida: '../../public/exercises/corrida.png',
+  Yoga: '../../public/exercises/yoga.png',
 };
 
 export const useNotification = (
