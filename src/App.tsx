@@ -1,14 +1,6 @@
 import { useState } from 'react';
 import { api } from './services/api';
 import { useNotification } from './hooks/useNotification';
-import alongamentoImg from './exercises/alongamento.png';
-import caminhadaImg from './exercises/caminhada.png';
-import bicicletaImg from './exercises/bicicleta.png';
-import flexaoImg from './exercises/flexao.png';
-import abdominalImg from './exercises/abdominal.png';
-import barraImg from './exercises/barra.png';
-import corridaImg from './exercises/corrida.png';
-import yogaImg from './exercises/yoga.png';
 
 const exercises = [
   'Alongamento',
@@ -22,14 +14,14 @@ const exercises = [
 ];
 
 const exerciseImages: Record<string, string> = {
-  Alongamento: alongamentoImg,
-  Caminhada: caminhadaImg,
-  Bicicleta: bicicletaImg,
-  Flexão: flexaoImg,
-  Abdominal: abdominalImg,
-  Barra: barraImg,
-  Corrida: corridaImg,
-  Yoga: yogaImg,
+  Alongamento: '/exercises/alongamento.png',
+  Caminhada: '/exercises/caminhada.png',
+  Bicicleta: '/exercises/bicicleta.png',
+  Flexão: '/exercises/flexao.png',
+  Abdominal: '/exercises/abdominal.png',
+  Barra: '/exercises/barra.png',
+  Corrida: '/exercises/corrida.png',
+  Yoga: '/exercises/yoga.png',
 };
 
 function App() {
