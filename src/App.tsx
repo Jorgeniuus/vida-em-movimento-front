@@ -97,38 +97,16 @@ return (
           </div>
 
           <div className="bg-white rounded-3xl p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold mb-6">
-              Intervalo
-            </h2>
-
-            <div className="space-y-4">
-              <label className="flex gap-3">
-                <input
-                  type="radio"
-                  name="interval"
-                  onChange={() =>
-                    setNotificationInterval('10sec')
-                  }
-                />
-                10 segundos (teste)
-              </label>
-
-              <label className="flex gap-3">
-                <input
-                  type="radio"
-                  name="interval"
-                  onChange={() => setNotificationInterval('30min')}
-                />
-                30 minutos
-              </label>
-
+              <h2 className="text-2xl font-semibold mb-6">
+                Intervalo
+              </h2>
               <label className="flex gap-3">
                 <input
                   type="radio"
                   name="interval"
                   onChange={() => setNotificationInterval('1h')}
                 />
-                1 hora
+                1 horas
               </label>
 
               <label className="flex gap-3">
@@ -137,7 +115,7 @@ return (
                   name="interval"
                   onChange={() => setNotificationInterval('3h')}
                 />
-                3 horas
+                3 hora
               </label>
 
               <label className="flex gap-3">
@@ -147,6 +125,15 @@ return (
                   onChange={() => setNotificationInterval('5h')}
                 />
                 5 horas
+              </label>
+
+              <label className="flex gap-3">
+                <input
+                  type="radio"
+                  name="interval"
+                  onChange={() => setNotificationInterval('7h')}
+                />
+                7 horas
               </label>
             </div>
           </div>

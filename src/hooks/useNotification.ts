@@ -3,11 +3,10 @@ import emailjs from '@emailjs/browser';
 import { api } from '../services/api';
 
 const intervalMap: Record<string, number> = {
-  '10sec': 10000,
-  '30min': 1800000,
   '1h': 3600000,
   '3h': 10800000,
   '5h': 18000000,
+  '7h': 25200000,
 };
 
 export const exerciseImageUrls: Record<string, string> = {
