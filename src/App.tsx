@@ -36,7 +36,6 @@ function App() {
 
       return;
     }
-
     setSelectedExercises([...selectedExercises, exercise]);
   };
 
